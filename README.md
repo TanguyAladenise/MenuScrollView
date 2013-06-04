@@ -3,6 +3,9 @@ MenuScrollView
 
 <p>Create a paging swappable menu, easily customizable, with item interactive outside of bounds for paging effect.</p>
 
+<img alt="ScreenShot Menu" src="https://github.com/TanguyAladenise/MenuScrollView/blob/master/MenuScreenshot.png?raw=true"/>
+
+
 How To Get Started
 ------------------
 
@@ -16,7 +19,7 @@ Just add "MenuScrollView.h" and "MenuScrollView.m" in your xcodeproject. If you 
 Wheter you use a nib or just hard code user interface you just need to create a new view of type MenuScrollView. 
 You must add this view inside an ExtendedScrollViewWrapper if you want it to respond to items outside of bounds, which is, at this time, the default behavior.
 
-Then, you only need to add items to your menu :
+Then, you only need to add items to your menu:
 
 ``` objective-c
 // add items to the menu
@@ -52,14 +55,14 @@ Delegate Methods
 ----------------
 
 The class comes with a delegate protocol in order to handle user interaction with the menu. 
-Two optional methods :
+Two optional methods:
     `-menuItemPressed:(UIButton *)item atIndex:(int)index;`
     `-menuMovedToItem:(UIButton *)item atIndex:(int)index;`
-    Thanks to those two methods you can actualize your interface or trigger actions when the user changes the menu item selected :
+    Thanks to those two methods you can actualize your interface or trigger actions when the user changes the menu item selected:
 
 ``` objective-c
 
-#pragma mark MenuScrolLView Delegate methods
+#pragma mark MenuScrollView Delegate methods
 
 // tell the view controller when the user changes menu item
 // this is the method to use to handle user interaction with the menu
@@ -106,6 +109,6 @@ for (UIButton *item in [self.myMenuScrollView getAllMenuItem]) {
 More
 ----
 
-<p>Any suggestions are welcome ! as I am looking to learn good practices, to understand better behaviors and Objective-c in general !
+<p>Any suggestions are welcome ! as I am looking to learn good practices, to understand better behaviors and Objective-C in general !
 Thank you.</p>
 
