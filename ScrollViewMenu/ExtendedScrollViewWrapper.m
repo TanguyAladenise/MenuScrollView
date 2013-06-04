@@ -10,6 +10,7 @@
 // Thanks to this wrapper, the scroll view will respond to touch and swipe out of its own bounds //
 
 #import "ExtendedScrollViewWrapper.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation ExtendedScrollViewWrapper
 
@@ -39,6 +40,12 @@
 - (void)initializationCode
 {
     self.backgroundColor = [UIColor whiteColor];
+    
+    self.layer.shadowColor = [[UIColor blackColor] CGColor];
+    self.layer.shadowOpacity = 0.2;
+    self.layer.shadowRadius = 1.0;
+    self.layer.shadowOffset = CGSizeMake(0,-1);
+    self.layer.shadowPath = [UIBezierPath bezierPathWithRect:self.bounds].CGPath;
 }
 
 
