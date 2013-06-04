@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5E282EE9175DCC4400624C0D /* ExtendedScrollViewWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E282EE8175DCC4400624C0D /* ExtendedScrollViewWrapper.m */; };
 		5E282EF1175E41C400624C0D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E282EF0175E41C400624C0D /* QuartzCore.framework */; };
+		5E282EFA175E49DA00624C0D /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E282EF8175E49DA00624C0D /* image.png */; };
+		5E282EFB175E49DA00624C0D /* image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E282EF9175E49DA00624C0D /* image@2x.png */; };
 		5E8DA1E7175D0C23007B5155 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E8DA1E6175D0C23007B5155 /* UIKit.framework */; };
 		5E8DA1E9175D0C23007B5155 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E8DA1E8175D0C23007B5155 /* Foundation.framework */; };
 		5E8DA1EB175D0C23007B5155 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E8DA1EA175D0C23007B5155 /* CoreGraphics.framework */; };
@@ -27,6 +29,8 @@
 		5E282EE7175DCC4400624C0D /* ExtendedScrollViewWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtendedScrollViewWrapper.h; sourceTree = "<group>"; };
 		5E282EE8175DCC4400624C0D /* ExtendedScrollViewWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtendedScrollViewWrapper.m; sourceTree = "<group>"; };
 		5E282EF0175E41C400624C0D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		5E282EF8175E49DA00624C0D /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image.png; sourceTree = "<group>"; };
+		5E282EF9175E49DA00624C0D /* image@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "image@2x.png"; sourceTree = "<group>"; };
 		5E8DA1E3175D0C23007B5155 /* ScrollViewMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScrollViewMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E8DA1E6175D0C23007B5155 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5E8DA1E8175D0C23007B5155 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -73,10 +77,19 @@
 			name = MenuScrollView;
 			sourceTree = "<group>";
 		};
+		5E282EF7175E48FC00624C0D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5E282EF8175E49DA00624C0D /* image.png */,
+				5E282EF9175E49DA00624C0D /* image@2x.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		5E8DA1DA175D0C23007B5155 = {
 			isa = PBXGroup;
 			children = (
-				5E282EF0175E41C400624C0D /* QuartzCore.framework */,
+				5E282EF7175E48FC00624C0D /* Resources */,
 				5E8DA1EC175D0C23007B5155 /* ScrollViewMenu */,
 				5E8DA1E5175D0C23007B5155 /* Frameworks */,
 				5E8DA1E4175D0C23007B5155 /* Products */,
@@ -94,6 +107,7 @@
 		5E8DA1E5175D0C23007B5155 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5E282EF0175E41C400624C0D /* QuartzCore.framework */,
 				5E8DA1E6175D0C23007B5155 /* UIKit.framework */,
 				5E8DA1E8175D0C23007B5155 /* Foundation.framework */,
 				5E8DA1EA175D0C23007B5155 /* CoreGraphics.framework */,
@@ -185,6 +199,8 @@
 				5E8DA1FB175D0C23007B5155 /* Default@2x.png in Resources */,
 				5E8DA1FD175D0C23007B5155 /* Default-568h@2x.png in Resources */,
 				5E8DA203175D0C23007B5155 /* ViewController.xib in Resources */,
+				5E282EFA175E49DA00624C0D /* image.png in Resources */,
+				5E282EFB175E49DA00624C0D /* image@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

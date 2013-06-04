@@ -108,7 +108,10 @@
     if ([itemsCollection indexOfObject:item] == indexItemSelected)
     {
         // case when we can trigger button action
-        [self.theDelegate menuItemPressed:item atIndex:indexItemSelected];
+        if ([self.theDelegate respondsToSelector:@selector(menuItemPressed:atIndex:)])
+        {
+            [self.theDelegate menuItemPressed:item atIndex:indexItemSelected];
+        }
     }
     else
     {
@@ -167,14 +170,22 @@
     [NSObject cancelPreviousPerformRequestsWithTarget:self];
     //ensure that the end of scroll is fired.
     [self performSelector:@selector(scrollViewDidEndScrollingAnimation:) withObject:nil afterDelay:0.1];
-    
+
 }
 
 // method called when scrollview ended up moving/animating
 -(void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView
 {
+    int prevIndex = indexItemSelected;
     [NSObject cancelPreviousPerformRequestsWithTarget:self];
     indexItemSelected = lroundf(self.contentOffset.x/self.frame.size.width);
+    
+    if (prevIndex != indexItemSelected) {
+        // trigger delegate method to inform item change
+        if ([self.theDelegate respondsToSelector:@selector(menuMovedToItem:atIndex:)]) {
+            [self.theDelegate menuMovedToItem:[itemsCollection objectAtIndex:indexItemSelected] atIndex:indexItemSelected];
+        }
+    }
 }
 
 

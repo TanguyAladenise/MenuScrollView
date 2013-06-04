@@ -31,16 +31,20 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [self.menuScrollView addItemWithText:@"TEST 1"];
-    [self.menuScrollView addItemWithText:@"TEST 2"];
-    [self.menuScrollView addItemWithText:@"TEST 3"];
-    [self.menuScrollView addItemWithText:@"TEST 4"];
-    [self.menuScrollView addItemWithText:@"TEST 5"];
+    [self.menuScrollView addItemWithText:@"Menu item 1"];
+    [self.menuScrollView addItemWithText:@"Item 2"];
+    [self.menuScrollView addItemWithText:@"Item 3"];
+    [self.menuScrollView addItemWithText:@"Item 4"];
+    [self.menuScrollView addItemWithText:@"Item 5"];
     
     [self.menuScrollView moveScrollViewToPageIndex:1 withAnimation:NO];
+    self.textLabel.text = @"Item 2 text label";
+    [self.textLabel sizeToFit];
+    self.textLabel.center = CGPointMake(self.view.center.x, self.textLabel.center.y);
     
     for (UIButton *item in [self.menuScrollView getAllMenuItem]) {
         [item setTitleColor:[UIColor colorWithRed:81/255.0 green:188/255.0 blue:197/255.0 alpha:1] forState:UIControlStateNormal];
+        item.titleLabel.font = [UIFont fontWithName:@"System" size:11];
     }
 }
 
@@ -54,7 +58,15 @@
 #pragma mark MenuScrolLView Delegate methods
 
 
-- (void)menuItemPressed:(UIButton *)item atIndex:(int)index {
-    NSLog(@"%d", index);
+//- (void)menuItemPressed:(UIButton *)item atIndex:(int)index {
+//    self.textLabel.text = item.titleLabel.text;
+//    [self.textLabel sizeToFit];
+//    self.textLabel.center = CGPointMake(self.view.center.x, self.textLabel.center.y);
+//}
+
+- (void)menuMovedToItem:(UIButton *)item atIndex:(int)index {
+    self.textLabel.text = item.titleLabel.text;
+    [self.textLabel sizeToFit];
+    self.textLabel.center = CGPointMake(self.view.center.x, self.textLabel.center.y);
 }
 @end

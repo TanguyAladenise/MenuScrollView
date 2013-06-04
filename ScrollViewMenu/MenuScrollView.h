@@ -32,8 +32,11 @@
 
 @end
 
-@protocol MenuScrollViewDelegate
+@protocol MenuScrollViewDelegate <NSObject>
 
-- (void) menuItemPressed:(UIButton *)item atIndex:(int)index;
+@optional
+- (void)menuItemPressed:(UIButton *)item atIndex:(int)index;
+@optional
+- (void)menuMovedToItem:(UIButton *)item atIndex:(int)index;
 
 @end

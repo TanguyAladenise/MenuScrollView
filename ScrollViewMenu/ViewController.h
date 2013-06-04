@@ -17,4 +17,5 @@
 @property (weak, nonatomic) IBOutlet ExtendedScrollViewWrapper *extendedScrollViewWrapper;
 @property (weak, nonatomic) IBOutlet UIView *bigBorderView;
 
+@property (weak, nonatomic) IBOutlet UILabel *textLabel;
 @end
