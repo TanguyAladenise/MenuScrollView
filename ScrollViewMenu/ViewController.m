@@ -40,6 +40,7 @@
     [self.menuScrollView addItemWithText:@"Item 5"];
     
     // moves the menu to item wanted
+    // can be use for example when you want to have a specific item focus on initialization
     [self.menuScrollView moveScrollViewToPageIndex:1 withAnimation:NO];
     
     // change textlabel
@@ -52,6 +53,7 @@
         [item setTitleColor:[UIColor colorWithRed:81/255.0 green:188/255.0 blue:197/255.0 alpha:1] forState:UIControlStateNormal];
         item.titleLabel.font = [UIFont fontWithName:@"System" size:11];
     }
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -61,7 +63,7 @@
 }
 
 
-#pragma mark MenuScrolLView Delegate methods
+#pragma mark MenuScrollView Delegate methods
 
 // tell the view controller when the user changes menu item
 - (void)menuMovedToItem:(UIButton *)item atIndex:(int)index {

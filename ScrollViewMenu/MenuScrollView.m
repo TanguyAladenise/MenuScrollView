@@ -54,17 +54,17 @@
     self.pagingEnabled = YES;
     self.showsHorizontalScrollIndicator = NO;
     self.showsVerticalScrollIndicator = NO;
-    self.userInteractionEnabled = YES;
+    
     self.delegate = self;
     
-    // change clipsToBounds property if you want to hide/see menu items out of scrolliview bounds
+    // change clipsToBounds property if you want to hide/see menu items out of scrollview bounds
     self.clipsToBounds = NO;
     
     // calculate widht of item
     [self calculateWidthOfItem];
     
-    // center the scroll view in screen
-    // you can change this to answer your needs
+    // you can change this to answer your needs (you should not change frame width)
+    // centers horizontally the menu in the screen
     self.frame = CGRectMake(([[UIScreen mainScreen] bounds].size.width / 2) - (widthOfItem/2), self.frame.origin.y, widthOfItem, self.frame.size.height);
     // sets scroll view contentSize
     [self calculateContentSize];
