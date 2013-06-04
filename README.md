@@ -51,11 +51,11 @@ self.frame = CGRectMake(([[UIScreen mainScreen] bounds].size.width / 2) - (width
 Delegate Methods
 ----------------
 
-<p>The class comes with a delegate protocol in order to handle user interaction with the menu. Two optional methods :
+The class comes with a delegate protocol in order to handle user interaction with the menu. 
+Two optional methods :
     `-menuItemPressed:(UIButton *)item atIndex:(int)index;`
     `-menuMovedToItem:(UIButton *)item atIndex:(int)index;`
     Thanks to those two methods you can actualize your interface or trigger actions when the user changes the menu item selected :
-</p>
 
 ``` objective-c
 
