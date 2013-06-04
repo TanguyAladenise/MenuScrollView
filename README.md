@@ -15,7 +15,7 @@ How To Get Started
 <p>Wheter you use a nib or just hard code user interface you just need to create a new view of type MenuScrollView. 
 You must add this view inside an ExtendedScrollViewWrapper if you want it to respond to items outside of bounds, which is, at this time, the default behavior.</p>
 
-Then, you only need to add items to your menu thanks to the method `-addItemWithText:(NSString *)text`
+<p>Then, you only need to add items to your menu thanks to the method "-addItemWithText:(NSString *)text"</p>
 ``` objective-c
 // add items to the menu
 [self.myMenuScrollView addItemWithText:@"Menu item 1"];
@@ -24,7 +24,7 @@ Then, you only need to add items to your menu thanks to the method `-addItemWith
 // and so on
 ```
 
-<p>By default the menu will display 3 items at a time on screen. The one in the middle being the one having focus. You can easily change this behavior by changing a #define var in "MenuScrollView.m". Also, by default the menu always center itself on the screen.
+<p>By default the menu will display 3 items at a time on screen. The one in the middle being the one having focus. You can easily change this behavior by changing a #define var in "MenuScrollView.m". Also, by default the menu always center itself on the screen.</p>
 ``` objective-c
 //
 //  MenuScrollView.m
@@ -43,7 +43,7 @@ Then, you only need to add items to your menu thanks to the method `-addItemWith
 // centers horizontally the menu in the screen
 self.frame = CGRectMake(([[UIScreen mainScreen] bounds].size.width / 2) - (widthOfItem/2), self.frame.origin.y, widthOfItem, self.frame.size.height);
 
-// ... //
+
 ```
 
 Delegate Methods
