@@ -15,7 +15,7 @@ How To Get Started
 <p>Wheter you use a nib or just hard code user interface you just need to create a new view of type MenuScrollView. 
 You must add this view inside an ExtendedScrollViewWrapper if you want it to respond to items outside of bounds, which is, at this time, the default behavior.</p>
 
-<p>Then, you only need to add items to your menu thanks to the method "-addItemWithText:(NSString *)text"</p>
+<p>Then, you only need to add items to your menu thanks to the method -addItemWithText:(NSString *)text</p>
 ``` objective-c
 // add items to the menu
 [self.myMenuScrollView addItemWithText:@"Menu item 1"];
