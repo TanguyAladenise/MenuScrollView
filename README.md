@@ -7,6 +7,7 @@ How To Get Started
 ------------------
 
 <p>Just add "MenuScrollView.h" and "MenuScrollView.m" in your xcodeproject. If you want the menu to handle touches outside of its bounds you must add "ExtendedScrollViewWrapper.h" and "ExtendedScrollViewWrapper.m" in your xcodeproject as well. Don't forget to import those wherever you need them :</p>
+
 ``` objective-c
 #import "MenuScrollView.h"
 #import "ExtendedScrollViewWrapper.h"
@@ -16,12 +17,10 @@ How To Get Started
 You must add this view inside an ExtendedScrollViewWrapper if you want it to respond to items outside of bounds, which is, at this time, the default behavior.</p>
 
 <p>Then, you only need to add items to your menu thanks to the method -addItemWithText:(NSString *)text</p>
+
 ``` objective-c
-// add items to the menu
-[self.myMenuScrollView addItemWithText:@"Menu item 1"];
-[self.myMenuScrollView addItemWithText:@"Menu item 2"];
-[self.myMenuScrollView addItemWithText:@"Menu item 3"];
-// and so on
+#import "MenuScrollView.h"
+#import "ExtendedScrollViewWrapper.h"
 ```
 
 <p>By default the menu will display 3 items at a time on screen. The one in the middle being the one having focus. You can easily change this behavior by changing a #define var in "MenuScrollView.m". Also, by default the menu always center itself on the screen.</p>
