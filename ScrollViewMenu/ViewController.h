@@ -10,7 +10,8 @@
 #import "MenuScrollView.h"
 #import "ExtendedScrollViewWrapper.h"
 
-@interface ViewController : UIViewController
+// to handle custom action from menu item pressed
+@interface ViewController : UIViewController <MenuScrollViewDelegate>
 
 @property (weak, nonatomic) IBOutlet MenuScrollView *menuScrollView;
 @property (weak, nonatomic) IBOutlet ExtendedScrollViewWrapper *extendedScrollViewWrapper;

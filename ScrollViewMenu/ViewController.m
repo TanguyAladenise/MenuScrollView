@@ -22,6 +22,8 @@
     // MUST TO DO
     // tells the wrapper which scroll view it contains
     self.extendedScrollViewWrapper.scrollView = self.menuScrollView;
+    // tells viewcontroller is delegate of the menu
+    self.menuScrollView.theDelegate = self;
     // create a border for the menu
     self.bigBorderView.frame = CGRectMake(self.bigBorderView.frame.origin.x, self.bigBorderView.frame.origin.y, self.menuScrollView.frame.size.width, self.bigBorderView.frame.size.height);
     self.bigBorderView.center = CGPointMake(self.menuScrollView.center.x, self.bigBorderView.center.y);
@@ -48,4 +50,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+#pragma mark MenuScrolLView Delegate methods
+
+
+- (void)menuItemPressed:(UIButton *)item atIndex:(int)index {
+    NSLog(@"%d", index);
+}
 @end

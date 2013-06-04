@@ -8,7 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol MenuScrollViewDelegate;
+
 @interface MenuScrollView : UIScrollView <UIScrollViewDelegate>
+
+
+@property (nonatomic, assign) id <MenuScrollViewDelegate> theDelegate;
 
 // public method
 
@@ -24,5 +29,11 @@
 //get all item
 - (NSArray *)getAllMenuItem;
 
+
+@end
+
+@protocol MenuScrollViewDelegate
+
+- (void) menuItemPressed:(UIButton *)item atIndex:(int)index;
 
 @end

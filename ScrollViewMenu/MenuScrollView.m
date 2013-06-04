@@ -46,7 +46,6 @@
 // code initializing the view
 - (void)initializationCode
 {    
-    NSLog(@"init menu scroll view");
     self.backgroundColor = [UIColor clearColor];
     
     // Default initialazition pratice
@@ -101,9 +100,21 @@
 
 - (void)itemPressed:(id)sender
 {
-    NSLog(@"Item pressed");
+    UIButton *item = (UIButton *)sender;
+    // we need to diferientiate wheter the button clicked is the current one or one out of bounds
+    // if this is the current one we can trigger its action
+    // if out of bounds the menu moves the item at the correct position
     
-    [self moveScrollViewToItem:(UIButton *)sender];
+    if ([itemsCollection indexOfObject:item] == indexItemSelected)
+    {
+        // case when we can trigger button action
+        [self.theDelegate menuItemPressed:item atIndex:indexItemSelected];
+    }
+    else
+    {
+        // case when we need to move the item in the center
+        [self moveScrollViewToItem:(UIButton *)sender];
+    }
 }
 
 - (UIButton *)getItemAtPage:(int)index
@@ -155,7 +166,7 @@
     // this code implement a method that is called once a scrollvew really did end animating !!!!
     [NSObject cancelPreviousPerformRequestsWithTarget:self];
     //ensure that the end of scroll is fired.
-    [self performSelector:@selector(scrollViewDidEndScrollingAnimation:) withObject:nil afterDelay:0.3];
+    [self performSelector:@selector(scrollViewDidEndScrollingAnimation:) withObject:nil afterDelay:0.1];
     
 }
 
@@ -164,7 +175,6 @@
 {
     [NSObject cancelPreviousPerformRequestsWithTarget:self];
     indexItemSelected = lroundf(self.contentOffset.x/self.frame.size.width);
-    NSLog(@"la %d", indexItemSelected);
 }
 
 

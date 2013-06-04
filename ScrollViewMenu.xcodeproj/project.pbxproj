@@ -62,6 +62,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5E282EF2175E440500624C0D /* MenuScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				5E8DA209175D0C65007B5155 /* MenuScrollView.h */,
+				5E8DA20A175D0C65007B5155 /* MenuScrollView.m */,
+				5E282EE7175DCC4400624C0D /* ExtendedScrollViewWrapper.h */,
+				5E282EE8175DCC4400624C0D /* ExtendedScrollViewWrapper.m */,
+			);
+			name = MenuScrollView;
+			sourceTree = "<group>";
+		};
 		5E8DA1DA175D0C23007B5155 = {
 			isa = PBXGroup;
 			children = (
@@ -98,10 +109,7 @@
 				5E8DA1FE175D0C23007B5155 /* ViewController.h */,
 				5E8DA1FF175D0C23007B5155 /* ViewController.m */,
 				5E8DA201175D0C23007B5155 /* ViewController.xib */,
-				5E8DA209175D0C65007B5155 /* MenuScrollView.h */,
-				5E8DA20A175D0C65007B5155 /* MenuScrollView.m */,
-				5E282EE7175DCC4400624C0D /* ExtendedScrollViewWrapper.h */,
-				5E282EE8175DCC4400624C0D /* ExtendedScrollViewWrapper.m */,
+				5E282EF2175E440500624C0D /* MenuScrollView */,
 				5E8DA1ED175D0C23007B5155 /* Supporting Files */,
 			);
 			path = ScrollViewMenu;
