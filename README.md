@@ -3,7 +3,7 @@ MenuScrollView
 
 <p>Create a paging swappable menu, easily customizable, with item interactive outside of bounds for paging effect.</p>
 
-<img alt="ScreenShot Menu" src="https://github.com/TanguyAladenise/MenuScrollView/blob/master/MenuScreenshot.png?raw=true"/>
+<img alt="ScreenShot Menu" src="https://github.com/TanguyAladenise/MenuScrollView/blob/master/MenuScreenshot.png?raw=true" width="320px"/>
 
 
 How To Get Started
