@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E282EE9175DCC4400624C0D /* ExtendedScrollViewWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E282EE8175DCC4400624C0D /* ExtendedScrollViewWrapper.m */; };
 		5E8DA1E7175D0C23007B5155 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E8DA1E6175D0C23007B5155 /* UIKit.framework */; };
 		5E8DA1E9175D0C23007B5155 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E8DA1E8175D0C23007B5155 /* Foundation.framework */; };
 		5E8DA1EB175D0C23007B5155 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E8DA1EA175D0C23007B5155 /* CoreGraphics.framework */; };
@@ -18,9 +19,12 @@
 		5E8DA1FD175D0C23007B5155 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E8DA1FC175D0C23007B5155 /* Default-568h@2x.png */; };
 		5E8DA200175D0C23007B5155 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8DA1FF175D0C23007B5155 /* ViewController.m */; };
 		5E8DA203175D0C23007B5155 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E8DA201175D0C23007B5155 /* ViewController.xib */; };
+		5E8DA20B175D0C65007B5155 /* MenuScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8DA20A175D0C65007B5155 /* MenuScrollView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5E282EE7175DCC4400624C0D /* ExtendedScrollViewWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtendedScrollViewWrapper.h; sourceTree = "<group>"; };
+		5E282EE8175DCC4400624C0D /* ExtendedScrollViewWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtendedScrollViewWrapper.m; sourceTree = "<group>"; };
 		5E8DA1E3175D0C23007B5155 /* ScrollViewMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScrollViewMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E8DA1E6175D0C23007B5155 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5E8DA1E8175D0C23007B5155 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -37,6 +41,8 @@
 		5E8DA1FE175D0C23007B5155 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		5E8DA1FF175D0C23007B5155 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		5E8DA202175D0C23007B5155 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		5E8DA209175D0C65007B5155 /* MenuScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuScrollView.h; sourceTree = "<group>"; };
+		5E8DA20A175D0C65007B5155 /* MenuScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuScrollView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +94,10 @@
 				5E8DA1FE175D0C23007B5155 /* ViewController.h */,
 				5E8DA1FF175D0C23007B5155 /* ViewController.m */,
 				5E8DA201175D0C23007B5155 /* ViewController.xib */,
+				5E8DA209175D0C65007B5155 /* MenuScrollView.h */,
+				5E8DA20A175D0C65007B5155 /* MenuScrollView.m */,
+				5E282EE7175DCC4400624C0D /* ExtendedScrollViewWrapper.h */,
+				5E282EE8175DCC4400624C0D /* ExtendedScrollViewWrapper.m */,
 				5E8DA1ED175D0C23007B5155 /* Supporting Files */,
 			);
 			path = ScrollViewMenu;
@@ -176,6 +186,8 @@
 				5E8DA1F3175D0C23007B5155 /* main.m in Sources */,
 				5E8DA1F7175D0C23007B5155 /* AppDelegate.m in Sources */,
 				5E8DA200175D0C23007B5155 /* ViewController.m in Sources */,
+				5E8DA20B175D0C65007B5155 /* MenuScrollView.m in Sources */,
+				5E282EE9175DCC4400624C0D /* ExtendedScrollViewWrapper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +310,7 @@
 				5E8DA208175D0C23007B5155 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

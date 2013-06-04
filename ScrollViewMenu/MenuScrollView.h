@@ -8,6 +8,21 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MenuScrollView : UIScrollView
+@interface MenuScrollView : UIScrollView <UIScrollViewDelegate>
+
+// public method
+
+// add a menu item to the menu
+- (void)addItemWithText:(NSString *)text;
+
+// move scroll view to a specific page
+- (void)moveScrollViewToPageIndex:(int)index withAnimation:(BOOL)animation;
+
+// get an item at index
+- (UIButton *)getItemAtPage:(int)index;
+
+//get all item
+- (NSArray *)getAllMenuItem;
+
 
 @end

@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MenuScrollView.h"
 
 @interface ExtendedScrollViewWrapper : UIView
+
+@property(retain, nonatomic) MenuScrollView *scrollView;
 
 @end
