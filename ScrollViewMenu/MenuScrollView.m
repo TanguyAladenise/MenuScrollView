@@ -49,17 +49,22 @@
     self.backgroundColor = [UIColor clearColor];
     
     // Default initialazition pratice
+    // for extra customization you can change things here
     self.scrollEnabled = YES;
     self.pagingEnabled = YES;
-    self.clipsToBounds = NO;
     self.showsHorizontalScrollIndicator = NO;
     self.showsVerticalScrollIndicator = NO;
     self.userInteractionEnabled = YES;
     self.delegate = self;
     
+    // change clipsToBounds property if you want to hide/see menu items out of scrolliview bounds
+    self.clipsToBounds = NO;
+    
     // calculate widht of item
     [self calculateWidthOfItem];
+    
     // center the scroll view in screen
+    // you can change this to answer your needs
     self.frame = CGRectMake(([[UIScreen mainScreen] bounds].size.width / 2) - (widthOfItem/2), self.frame.origin.y, widthOfItem, self.frame.size.height);
     // sets scroll view contentSize
     [self calculateContentSize];
@@ -73,7 +78,6 @@
     UIButton *item = [UIButton buttonWithType:UIButtonTypeCustom];
     // set item title
     [item setTitle:text forState:UIControlStateNormal];
-    // TO DO set up properties of the item
     
     // add the item inside the menu at correct position
     int nbOfItem = [itemsCollection count];
@@ -108,6 +112,8 @@
     if ([itemsCollection indexOfObject:item] == indexItemSelected)
     {
         // case when we can trigger button action
+        // this behavior is not the best to detect when the user changes menu item focus
+        // better take a look at -(void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView
         if ([self.theDelegate respondsToSelector:@selector(menuItemPressed:atIndex:)])
         {
             [self.theDelegate menuItemPressed:item atIndex:indexItemSelected];
@@ -116,48 +122,34 @@
     else
     {
         // case when we need to move the item in the center
-        [self moveScrollViewToItem:(UIButton *)sender];
+        [self moveScrollViewToItem:(UIButton *)sender withAnimation:YES];
     }
 }
 
+// return item at specific index
 - (UIButton *)getItemAtPage:(int)index
 {
     return [itemsCollection objectAtIndex:index];
 }
 
+// return an array of all menu items
 - (NSArray *)getAllMenuItem {
     return itemsCollection;
 }
 
 
+#pragma mark ScrollView animation methods
 
-#pragma mark Scroll View animation methods
-
-- (void)moveScrollViewToItem:(UIButton *)item
+// move scroll view to specific item
+- (void)moveScrollViewToItem:(UIButton *)item withAnimation:(BOOL)animation
 {
-    [self scrollRectToVisible:item.frame animated:YES];
+    [self scrollRectToVisible:item.frame animated:animation];
 }
 
 - (void)moveScrollViewToPageIndex:(int)index withAnimation:(BOOL)animation
 {
     UIButton *item = [itemsCollection objectAtIndex:index];
     [self scrollRectToVisible:item.frame animated:animation];
-}
-
-
-
-#pragma calculation methods
-
-// calculate width of item
-- (void)calculateWidthOfItem
-{
-    widthOfItem = self.frame.size.width / NUMBEROFVISIBLEITEM;
-}
-
-// calculate contentsize of menu
-- (void)calculateContentSize
-{
-    self.contentSize = CGSizeMake(widthOfItem * ([itemsCollection count] + 1), self.frame.size.height);
 }
 
 
@@ -168,7 +160,8 @@
 {
     // this code implement a method that is called once a scrollvew really did end animating !!!!
     [NSObject cancelPreviousPerformRequestsWithTarget:self];
-    //ensure that the end of scroll is fired.
+    // methods triggered when scroll view did end moving
+    // great to tell for sure if a user selected a new item
     [self performSelector:@selector(scrollViewDidEndScrollingAnimation:) withObject:nil afterDelay:0.1];
 
 }
@@ -176,6 +169,7 @@
 // method called when scrollview ended up moving/animating
 -(void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView
 {
+    // save previous index to make sure the user really changed item focus
     int prevIndex = indexItemSelected;
     [NSObject cancelPreviousPerformRequestsWithTarget:self];
     indexItemSelected = lroundf(self.contentOffset.x/self.frame.size.width);
@@ -188,10 +182,26 @@
     }
 }
 
+#pragma calculation methods
+
+// calculate width of item
+- (void)calculateWidthOfItem
+{
+    // width of each item depends on numberofvisibleitem on screen
+    widthOfItem = self.frame.size.width / NUMBEROFVISIBLEITEM;
+}
+
+// calculate contentsize of menu
+- (void)calculateContentSize
+{
+    // the contentsize changes depending on how many items there is
+    self.contentSize = CGSizeMake(widthOfItem * ([itemsCollection count] + 1), self.frame.size.height);
+}
 
 
 #pragma mark extend scrollable action outside of scroll view bounds
 
+// Thanks to those two override methods we can tell when a user touches a button OUTSIDE of the MenuScrollView bounds
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event
 {
     UIView *view = [super hitTest:point withEvent:event];
@@ -206,14 +216,5 @@
 }
 
 
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
 
 @end

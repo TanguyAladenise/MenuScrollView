@@ -37,10 +37,12 @@
 }
 
 // code initializing the view
+// you can customize this appearance has needed
 - (void)initializationCode
 {
     self.backgroundColor = [UIColor whiteColor];
     
+    // drop shadow effect 
     self.layer.shadowColor = [[UIColor blackColor] CGColor];
     self.layer.shadowOpacity = 0.2;
     self.layer.shadowRadius = 1.0;
@@ -49,7 +51,7 @@
 }
 
 
-
+// VERY IMPORTANT TO KEEP THIS IF YOU WANT YOUR MENUSCROLLVIEW TO RESPONDS TOUCHES OUT OF ITS BOUNDS
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event
 {
     UIView *view = [super hitTest:point withEvent:event];
@@ -60,13 +62,5 @@
     return view;
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
 
 @end

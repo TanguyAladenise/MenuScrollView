@@ -32,6 +32,7 @@
 
 @end
 
+// define MenuScrollViewDelegate
 @protocol MenuScrollViewDelegate <NSObject>
 
 @optional

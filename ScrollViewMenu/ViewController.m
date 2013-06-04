@@ -22,6 +22,7 @@
     // MUST TO DO
     // tells the wrapper which scroll view it contains
     self.extendedScrollViewWrapper.scrollView = self.menuScrollView;
+    
     // tells viewcontroller is delegate of the menu
     self.menuScrollView.theDelegate = self;
     // create a border for the menu
@@ -31,17 +32,22 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    // add items to the menu
     [self.menuScrollView addItemWithText:@"Menu item 1"];
     [self.menuScrollView addItemWithText:@"Item 2"];
     [self.menuScrollView addItemWithText:@"Item 3"];
     [self.menuScrollView addItemWithText:@"Item 4"];
     [self.menuScrollView addItemWithText:@"Item 5"];
     
+    // moves the menu to item wanted
     [self.menuScrollView moveScrollViewToPageIndex:1 withAnimation:NO];
+    
+    // change textlabel
     self.textLabel.text = @"Item 2 text label";
     [self.textLabel sizeToFit];
     self.textLabel.center = CGPointMake(self.view.center.x, self.textLabel.center.y);
     
+    // retrieve each item for customization
     for (UIButton *item in [self.menuScrollView getAllMenuItem]) {
         [item setTitleColor:[UIColor colorWithRed:81/255.0 green:188/255.0 blue:197/255.0 alpha:1] forState:UIControlStateNormal];
         item.titleLabel.font = [UIFont fontWithName:@"System" size:11];
@@ -57,14 +63,9 @@
 
 #pragma mark MenuScrolLView Delegate methods
 
-
-//- (void)menuItemPressed:(UIButton *)item atIndex:(int)index {
-//    self.textLabel.text = item.titleLabel.text;
-//    [self.textLabel sizeToFit];
-//    self.textLabel.center = CGPointMake(self.view.center.x, self.textLabel.center.y);
-//}
-
+// tell the view controller when the user changes menu item
 - (void)menuMovedToItem:(UIButton *)item atIndex:(int)index {
+    // update text label depending on menu selection
     self.textLabel.text = item.titleLabel.text;
     [self.textLabel sizeToFit];
     self.textLabel.center = CGPointMake(self.view.center.x, self.textLabel.center.y);
