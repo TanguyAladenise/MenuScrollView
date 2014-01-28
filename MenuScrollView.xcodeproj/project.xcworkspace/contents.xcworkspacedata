@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:ScrollViewMenu.xcodeproj">
+      location = "self:MenuScrollView.xcodeproj">
    </FileRef>
 </Workspace>

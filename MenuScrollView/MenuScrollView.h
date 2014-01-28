@@ -12,23 +12,19 @@
 
 @interface MenuScrollView : UIScrollView <UIScrollViewDelegate>
 
-
+// Avoid conflict with self.delegate property from UISCrollView
 @property (nonatomic, assign) id <MenuScrollViewDelegate> theDelegate;
+@property (nonatomic, readonly) NSMutableArray *itemsCollection;
 
-// public method
 
 // add a menu item to the menu
-- (void)addItemWithText:(NSString *)text;
+- (void)addItemWithTitle:(NSString *)title;
 
 // move scroll view to a specific page
-- (void)moveScrollViewToPageIndex:(int)index withAnimation:(BOOL)animation;
+- (void)moveMenuScrollViewToIndex:(int)index animated:(BOOL)animation;
 
 // get an item at index
-- (UIButton *)getItemAtPage:(int)index;
-
-//get all item
-- (NSArray *)getAllMenuItem;
-
+- (UIButton *)getItemAtIndex:(int)index;
 
 @end
 
